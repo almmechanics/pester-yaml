@@ -23,13 +23,9 @@ steps:
     #pwsh: false # Optional
     #workingDirectory: # Optional
     timeoutInMinutes: 1
-
-steps:
 - task: PublishTestResults@2
-    displayName: 'Publish Pester results'
   inputs:
-    testResultsFormat: NUnit
-
-  condition: always()
-  timeoutInMinutes: 1
-
+    displayName: 'Publish Pester results'
+      condition: always()
+      testResultsFormat: NUnit
+      timeoutInMinutes: 1
