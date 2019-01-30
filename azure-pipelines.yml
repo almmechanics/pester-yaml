@@ -24,17 +24,12 @@ steps:
     #workingDirectory: # Optional
     timeoutInMinutes: 1
 
+steps:
 - task: PublishTestResults@2
-  inputs:
     displayName: 'Publish Pester results'
-    testResultsFormat: 'NUnit' # Options: JUnit, NUnit, VSTest, xUnit
-    testResultsFiles: '**/TEST-*.xml' 
-    #searchFolder: '$(System.DefaultWorkingDirectory)' # Optional
-    #mergeTestResults: false # Optional
-    #testRunTitle: # Optional
-    #buildPlatform: # Optional
-    #buildConfiguration: # Optional
-    #publishRunAttachments: true # Optional
-    #continueOnError: true
-    condition: always()
-    timeoutInMinutes: 1
+  inputs:
+    testResultsFormat: NUnit
+
+  condition: always()
+  timeoutInMinutes: 1
+
