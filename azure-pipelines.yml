@@ -35,5 +35,5 @@ steps:
     #buildPlatform: # Optional
     #buildConfiguration: # Optional
     #publishRunAttachments: true # Optional
-    condition: always() # this step will always run, even if the pipeline is cancelled
+    continueOnError: true # this step will always run, even if the pipeline is cancelled
     timeoutInMinutes: 1
