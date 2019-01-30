@@ -18,7 +18,7 @@ steps:
     #arguments: # Optional
     script: "Invoke-Pester @{Path= './tests/*.tests.ps1' ;Parameters = @{Answer='41'}} -OutputFile TEST-HHGTTG.xml -OutputFormat NUnitXML -EnableExit" # Required when targetType == Inline
     #errorActionPreference: 'stop' # Optional. Options: stop, continue, silentlyContinue
-    failOnStderr: true # Optional
+    failOnStderr: false # Optional
     #ignoreLASTEXITCODE: false # Optional
     #pwsh: false # Optional
     #workingDirectory: # Optional
