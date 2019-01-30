@@ -2,6 +2,8 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+variables:
+  Answer:
 
 trigger:
 - master
@@ -14,7 +16,7 @@ steps:
   inputs:
     displayName: 'Generate Pester Analysis'
     targetType: 'inline' # Optional. Options: filePath, inline
-    script: "Invoke-Pester @{Path= './tests/*.tests.ps1' ;Parameters = @{Answer='41'}} -OutputFile TEST-HHGTTG.xml -OutputFormat NUnitXML -EnableExit" # Required when targetType == Inline
+    script: "Invoke-Pester @{Path= './tests/*.tests.ps1' ;Parameters = @{Answer='$(Answer)'}} -OutputFile TEST-HHGTTG.xml -OutputFormat NUnitXML -EnableExit" # Required when targetType == Inline
     timeoutInMinutes: 1
 - task: PublishTestResults@2
   displayName: 'Publish Test Results **/TEST-*.xml'
