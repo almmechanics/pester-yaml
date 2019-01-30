@@ -24,8 +24,8 @@ steps:
     #workingDirectory: # Optional
     timeoutInMinutes: 1
 - task: PublishTestResults@2
+  displayName: 'Publish Test Results **/TEST-*.xml'
   inputs:
-    displayName: 'Publish Pester results'
-      condition: always()
-      testResultsFormat: NUnit
-      timeoutInMinutes: 1
+    testResultsFormat: NUnit
+
+  condition: always()
