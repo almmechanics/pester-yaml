@@ -35,5 +35,6 @@ steps:
     #buildPlatform: # Optional
     #buildConfiguration: # Optional
     #publishRunAttachments: true # Optional
-    continueOnError: true
+    #continueOnError: true
+    condition: always()
     timeoutInMinutes: 1
